@@ -16,29 +16,31 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            # Video Game Sales Project
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
+            ## I have enjoyed video games since I was a teenager.
+            ## On Kaggle I saw this set of data shrubbed from the website vgsales.
 
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+
+            - ### Want to see if there was a relationship between your favorite 
+              ### platforms, publishers and consols in determining sales?
 
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Go to predict', color='primary'), href='/predictions')
     ],
-    md=4,
+    md=12,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
 
-column2 = dbc.Col(
-    [
-        dcc.Graph(figure=fig),
-    ]
-)
 
-layout = dbc.Row([column1, column2])
+# fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
+#           hover_name="country", log_x=True, size_max=60)
+
+# column2 = dbc.Col(
+#    [
+#        dcc.Graph(figure=fig),
+#    ]
+#)
+layout = dbc.Row([column1])
